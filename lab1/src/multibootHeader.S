@@ -1,10 +1,11 @@
 .text
-.global  start
+.globl  start
 
+.section .multiboot_header
+.long 0x1badb002
+.long 0x0
+.long -0x1badb002
 start:
-        .long 0x1badb002
-        .long 0x0
-	.long -0x1badb002
 si:	//output through serial interface
         movw $0x3f8, %dx
 nop
